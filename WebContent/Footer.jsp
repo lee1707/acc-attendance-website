@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   </main>
     <footer class="container">
 		<p>&copy; Arivo Coding Club 2016-2018</p>
 	</footer>

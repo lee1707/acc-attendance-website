@@ -2,6 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@include file="Header.jsp"%>
 
+<style>
+	#abroad{
+		color:Gainsboro;
+	}
+</style>
+
     <!-- Begin page content -->
     <main role="main" class="container">
       <h1 class="mt-5">출석확인</h1>
@@ -17,6 +23,7 @@
             <th>이름</th>
             <th>아이디</th>
             <th>출결</th>
+            <th>출석률</th>
             <th>비고</th>
           </tr>
         </thead>
@@ -34,8 +41,12 @@
                 <label class="form-check-label" for="absent">결석</label>
               </div>
             </td>
+      
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
+            db에서 받아올것
+            </td>
+            <td>
+            db에서 받아올것
             </td>
           </tr>
           <tr>
@@ -52,7 +63,8 @@
               </div>
             </td>
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
+            </td>
+            <td>
             </td>
           </tr>
           <tr>
@@ -69,24 +81,8 @@
               </div>
             </td>
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
-            </td>
-          </tr>
-          <tr>
-            <td>오도근</td>
-            <td>ODG</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_ODG" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_ODG" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
             </td>
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
             </td>
           </tr>
           <tr>
@@ -102,8 +98,9 @@
                 <label class="form-check-label" for="absent">결석</label>
               </div>
             </td>
+             <td>
+            </td>
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
             </td>
           </tr>
           <tr>
@@ -119,8 +116,28 @@
                 <label class="form-check-label" for="absent">결석</label>
               </div>
             </td>
+             <td>
+            </td>
             <td>
-              <input class="form-control" type="text" name="memo" placeholder="Please type the memo.">
+            </td>
+          </tr>
+          <tr id="abroad">
+            <td>오도근</td>
+            <td>ODG</td>
+            <td>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="chk_info_ODG" value="attendance" id="attendance">
+                <label class="form-check-label" for="attendance">출석</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="chk_info_ODG" value="absent" id="absent" checked>
+                <label class="form-check-label" for="absent">결석</label>
+              </div>
+            </td>
+             <td>
+            </td>
+            <td>
+            	활동하지 않는 멤버
             </td>
           </tr>
         </tbody>

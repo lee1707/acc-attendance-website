@@ -1,38 +1,55 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+<title>Signin Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet">
+<style>
+.form-signin {
+	width: 50rem;
+	margin: 0 auto;
+}
+</style>
+<!-- Bootstrap core CSS -->
+<link href="bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
-  </head>
+<!-- Custom styles for this template -->
+<link href="signin.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
 
-  <body class="text-center">
-    <form class="form-signin" action=oldSignin method=post>
-      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">로그인 부탁드려요</h1>
-        <label for="inputid" class="sr-only">아이디</label>
-        <input type="id" name="ID" id="inputid" class="form-control" placeholder="ID" required autofocus>
-        <label for="inputPassword" class="sr-only">패스워드</label>
-        <input type="password" name="PASSWORD" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me">내 아이디를 기억해 주세요
-        </label>
+</head>
+
+<body class="text-center">
+<div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h2>로그인</h2>
+        <p class="lead">아이디와 패스워드를 정확히 입력해주세요</p>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2016-2018</p>
-    </form>
-  </body>
+	<form class="form-signin" action=oldSignin method=post>
+		<img class="mb-4"
+			src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg"
+			alt="" width="72" height="72">
+		<label for="inputid" class="sr-only">아이디</label> <input type="id"
+			name="ID" id="inputid" class="form-control" placeholder="ID" required
+			autofocus> <label for="inputPassword" class="sr-only">패스워드</label>
+		<input type="password" name="PASSWORD" id="inputPassword"
+			class="form-control" placeholder="Password" required>
+		<div class="checkbox mb-3">
+			<label> <input type="checkbox" value="remember-me">내
+				아이디를 기억해 주세요
+			</label>
+		</div>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
+		<p class="mt-5 mb-3 text-muted">&copy; 2016-2018</p>
+	</form>
+</body>
 </html>

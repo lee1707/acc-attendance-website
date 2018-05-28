@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="boardItem" class="web.BoardItem"/>
+<jsp:useBean id="boardItem" class="com.acc.attendance.model.BoardItem"/>
 <jsp:setProperty name="boardItem" property="seqNo" value="${param.SEQ_NO}" />
 <% boardItem.readDB(); %>
 <!doctype html>
