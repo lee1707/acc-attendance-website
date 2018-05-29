@@ -4,6 +4,12 @@
     pageEncoding="UTF-8"%>
 <%@include file="Header.jsp"%>
 
+<style>
+	.btn{
+	cursor:pointer;
+	}
+</style>
+
     <!-- Begin page content -->
     <main role="main" class="container">
       <h1 class="mt-5">게시판 목록 보기</h1>

@@ -23,6 +23,7 @@
 	color: white;
 }
 
+
 .jumbotron{
 	transition: all 2s;
 }
@@ -119,7 +120,7 @@
 	<main role="main"> <!-- Main jumbotron for a primary marketing message or call to action -->
 	<div class="jumbotron">
 		<div class="container">
-			<div class="center jumbovidtext">
+			<div class="center jumbovidtext" style="margin-top:3rem">
 			<h1 class="display-3" id="font1">Arivo Coding Club(ACC)</h1>
 			
 			<div class="font2">
