@@ -52,8 +52,8 @@
 						aria-expanded="false">학습활동</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
 							<a class="dropdown-item" href="attendanceInput.jsp">출결입력</a> <a
-								class="dropdown-item" href="attendanceCheck.jsp">출석확인</a> <a
-								class="dropdown-item" href="Progress-list.jsp">진도표</a> <a
+								class="dropdown-item" href="Attendance-list">출석확인</a> <a
+								class="dropdown-item" href="Progress-list">진도표</a> <a
 								class="dropdown-item" href="board-list">게시판</a>
 						</div></li>
 				</ul>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("utf-8"); %>
 <%@include file="Header.jsp"%>
 
 <style>
@@ -14,137 +15,35 @@
       <p class="lead">
       
       <main role="main" class="container">
-      <h1 class="mt-5">오늘 출석현황</h1>
+      <h1 class="mt-5">출석현황</h1>
       <p class="lead">
         <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
+            <th>순번</th>
             <th>이름</th>
-            <th>아이디</th>
-            <th>출결</th>
-            <th>출석률</th>
+            <th>출결률</th>
+            <th>총 출석일수</th>
             <th>비고</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>이준영</td>
-            <td>LJY</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_LJY" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_LJY" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-      
-            <td>
-            db에서 받아올것
-            </td>
-            <td>
-            db에서 받아올것
-            </td>
-          </tr>
-          <tr>
-            <td>윤시훈</td>
-            <td>YSH</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_YSH" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_YSH" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>이한솔</td>
-            <td>RHS</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_RHS" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_RHS" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>이강은</td>
-            <td>LGE</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_LGE" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_LGE" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-             <td>
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>최평강</td>
-            <td>CPG</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_CPG" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_CPG" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-             <td>
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr id="abroad">
-            <td>오도근</td>
-            <td>ODG</td>
-            <td>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_ODG" value="attendance" id="attendance">
-                <label class="form-check-label" for="attendance">출석</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="chk_info_ODG" value="absent" id="absent" checked>
-                <label class="form-check-label" for="absent">결석</label>
-              </div>
-            </td>
-             <td>
-            </td>
-            <td>
-            	활동하지 않는 멤버
-            </td>
-          </tr>
+        <c:forEach var="cnt" begin="0" end="${AttendanceList.listSize-1}">
+        	<tr>
+        		<td>${AttendanceList.num[cnt]}</td>
+        		<td>${AttendanceList.name[cnt]}</td>
+        		<td>${AttendanceList.attPercent[cnt]}</td>
+        		<td>${AttendanceList.attTotal[cnt]}</td>
+        		<td>${AttendanceList.extra[cnt]}</td>
+        	</tr>
+        </c:forEach>
         </tbody>
-      </table>
-      </div>
-
-
+        </table>
+        <c:if test="${!AttendanceList.lastPage}">
+        	<a href='Attendance-list?LAST_SEQ_NO=${AttendanceList.num[AttendanceList.listSize-1]}'>다음페이지</a>
+        </c:if>
+        </div> 
       <h1 class="mt-5">월별 출결률</h1>
       <canvas class="my-4" id="myChart" width="900" height="150"></canvas>
 

@@ -37,5 +37,9 @@
 		catch (Exception ignored){
 		}
 	}
-	response.sendRedirect("Main.jsp");
+	response.sendRedirect("signupSuccess.html");
 %>
+
+
+
+

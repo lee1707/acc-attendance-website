@@ -63,7 +63,7 @@
 
             
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">가입하기</button>
+            <button class="btn btn-primary btn-lg btn-block" id="btnSignUp" type="button">가입하기</button>
           </form>
       
 
@@ -80,8 +80,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="bootstrap.min.js"></script>
     <script src="vendor/holder.min.js"></script>
@@ -106,6 +105,48 @@
           });
         }, false);
       })();
+    </script>
+    
+    <script>
+    	//page가 loading된 후 아래가 실행됨, 아래는 jquery임
+    	$(function() {
+    		//id가 btnSignUp인 버튼에 클릭 이벤트 핸들러 함수를 등록
+    		$('#btnSignUp').click(function(e) {
+    			//전송할 SignUp객체를 만듦
+    			var signUp = {
+    					name: $('[name=name]').val(),
+    					id: $('[name=id]').val(),
+    					password: $('[name=password]').val(),
+    			};
+    			console.log(signUp);
+    			
+    			//위엣 만든 객체를 JSON문자열로 변환
+    			signUp = JSON.stringify(signUp);
+    			console.log(signUp);
+    			
+    			//ajax통신 호출, jqeury사용
+    			$.ajax({
+    				url: './SignupAPIServlet',
+    				method: 'POST',
+    				data: signUp,//json
+    				//ajax 통신후 200응답
+    				success: function(response) {
+    					console.log(response);
+    					
+    					if(response.result === 'OK') {
+    						alert('회원가입이 완료되었습니다.');
+    						window.close();
+    					} else {
+    						alert(response.message);
+    					}
+    				},
+    				//에러시 콜백(서버나 통신에서 에러가 발생시  알수잇다)
+    				error: function(jqXhr, statusCode, statusMessage) {
+    					
+    				}
+    			});
+    		});
+    	});
     </script>
   </body>
 </html>
