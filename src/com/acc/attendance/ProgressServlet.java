@@ -53,7 +53,7 @@ public class ProgressServlet extends HttpServlet {
 				if (!rs.next())
 					break;
 				list.setNum(cnt, rs.getInt("num"));
-				list.setName(cnt, toUnicode(rs.getString("name")));
+				list.setName(cnt, rs.getString("name"));
 				list.setProgress(cnt, rs.getInt("progress"));
 			}
 			if (!rs.next())
@@ -71,17 +71,5 @@ public class ProgressServlet extends HttpServlet {
 			}
 		}
 		return list;
-	}
-
-	private String toUnicode(String str) {
-		if (str == null)
-			return null;
-		try {
-			byte[] b = str.getBytes("ISO-8859-1");
-			return new String(b);
-		} catch (java.io.UnsupportedEncodingException uee) {
-			System.out.println(uee.getMessage());
-			return null;
-		}
 	}
 }
