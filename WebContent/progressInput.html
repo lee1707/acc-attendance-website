@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>진도표 추가</title>
+</head>
+<body>
+	<form action="Progress-Input" id="progress"
+		enctype="multipart/form-data" method="post">
+		공부제목: <input type="text" name="name"><br>
+		progress(0~100사이의 숫자입력): <input type="text" name="progress"><br>
+		<input type="button" id="btnConfirm" value="확인">
+	</form>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="vendor/holder.min.js"></script>
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+			'use strict';
+
+			window.addEventListener('load',
+					function() {
+						// Fetch all the forms we want to apply custom Bootstrap validation styles to
+						var forms = document
+								.getElementsByClassName('needs-validation');
+
+						// Loop over them and prevent submission
+						var validation = Array.prototype.filter.call(forms,
+								function(form) {
+									form.addEventListener('submit', function(
+											event) {
+										if (form.checkValidity() === false) {
+											event.preventDefault();
+											event.stopPropagation();
+										}
+										form.classList.add('was-validated');
+									}, false);
+								});
+					}, false);
+		})();
+	</script>
+	<script>
+		$(function() {
+			//id가 progress인 버튼에 클릭 이벤트 핸들러 함수를 등록
+			$('#btnConfirm').click(function(e) {
+				e.preventDefault();
+				//전송할 객체를 만듦
+				var progressInput = {
+					name : $('[name=name]').val(),
+					progress : $('[name=progress]').val(),
+				};
+				console.log(progressInput);
+
+				//위엣 만든 객체를 JSON문자열로 변환
+				progressInput = JSON.stringify(progressInput);
+				console.log(progressInput);
+
+				//ajax통신 호출, jqeury사용
+				$.ajax({
+					url : './ProgressInputServlet',
+					method : 'POST',
+					data : progressInput,//json
+					//ajax 통신후 200응답
+					success : function(response) {
+						console.log(response);
+
+						if (response.result === 'OK') {
+							alert('진도표 추가가 완료되었습니다.');
+							window.close();
+							location.href = 'Progress-list';
+						} else {
+							alert(response.message);
+						}
+					},
+					//에러시 콜백(서버나 통신에서 에러가 발생시  알수잇다)
+					error : function(jqXhr, statusCode, statusMessage) {
+
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>

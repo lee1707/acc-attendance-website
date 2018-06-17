@@ -64,6 +64,7 @@
             
             <hr class="mb-4">
             <button class="btn btn-primary btn-lg btn-block" id="btnSignUp" type="button">가입하기</button>
+          	
           </form>
       
 
@@ -136,6 +137,7 @@
     					if(response.result === 'OK') {
     						alert('회원가입이 완료되었습니다.');
     						window.close();
+    						location.href='Main.jsp';
     					} else {
     						alert(response.message);
     					}

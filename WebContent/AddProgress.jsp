@@ -24,24 +24,30 @@
       		<td>공부제목</td>
       		<td>progress(%)</td>
       	</tr>
-      	<c:forEach var="cnt" begin="0" end="${Progress_ListBean.size() -1 }">
+      	<c:forEach var="cnt" begin="0" end="${Progress_ListBean.listSize -1 }">
       		<tr>
-      			<td width="50">${Progress_ListBean.get(cnt).getNum()}</td>
-      			<td width="100">${Progress_ListBean.get(cnt).getName()}</td>
+      			<td width="50">${Progress_ListBean.num[cnt]}</td>
+      			<td width="100">${Progress_ListBean.name[cnt]}</td>
       			<td width="800">
       			<div class="progress">
-     			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${Progress_ListBean.get(cnt).getProgress()}%"></div>
+     			<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: ${Progress_ListBean.progress[cnt]}%"></div>
      	 		</div>
      	 		</td> 
       		</tr>
       	</c:forEach>
       </table>
       
+      <c:if test="<td>${!Progress_ListBean.lastPage}">
+      	<a href='Progress-list?LAST_SEQ_NO=${Progress_ListBean.num[Progress_ListBean.listSize-1]}'>다음페이지</a>
+      </c:if>
+      
+
+
       </p>
       <p>
       <div class="row">
             <div class="col-lg-12 text-center">
-              <a href='#' onclick='javascript:window.open("progressInput.html", "_blank", "height=300,width=450");' title='Pop Up'><button class="btn btn-info" type="submit" value="SAVE">추가</button></a>
+              <a href='AddProgress.html'><button class="btn btn-info" type="submit" value="SAVE">추가</button></a>
               <a href='Progress-Input'><button class="btn btn-light" type="reset">수정</button></a>  
             </div>
           </div>  

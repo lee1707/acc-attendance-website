@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.acc.attendance.model.AttendanceList;
-import com.acc.attendance.model.ProgressListBean;
+import com.acc.attendance.model.ProgressInput;
 
 @WebServlet("/Attendance-list")
 public class AttendanceListServlet extends HttpServlet {
