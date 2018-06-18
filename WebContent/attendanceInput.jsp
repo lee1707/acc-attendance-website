@@ -142,11 +142,14 @@
 </main>
 
 <script>
+//여기 아래가 핵심
 function postAttend(memberAttends) {
 	console.log('request', memberAttends);
 	$.ajax({
+		//Attendance-InputList로 보냄
 		url: './Attendance-InputList',
 		method: 'POST',
+		//??
 		data: JSON.stringify(memberAttends),
 		success: function(response) {
 			alert('출결 상태가 저장되었습니다.');
@@ -160,15 +163,21 @@ $(document).ready(function() {
 		e.preventDefault();
 		
 		var array = [];
+		//계속 보냄 돌고 돌려서.
 		$('[name=num]').each(function() {
 		var status = {
 		id: this.value,
-		status: $('[name=' + this.value + ']:checked').val() 
+		//status checked를 보냄
+		status: $('[name=' + this.value + ']:checked').val(), 
+		count: 0,
+		extra: null
 		}
 
+		//push는 list의 add같은것. array에 status를 담음
 		array.push(status);
 		});
 		
+		//array를 넣어서 postAttend호출
 		postAttend(array);
 	});
 })

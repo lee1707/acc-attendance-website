@@ -21,17 +21,9 @@ import com.acc.attendance.model.ProgressInput;
 public class ProgressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	// public ProgressServlet() {
-	// super();
-	// // TODO Auto-generated constructor stub
-	// }
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		// 이 LAST SEQ NO가 어디서 온건지 모르겠음
 		String strUpperSeqNo = request.getParameter("LAST_SEQ_NO");
 		int upperSeqNo;
 		if (strUpperSeqNo == null)
@@ -60,6 +52,7 @@ public class ProgressServlet extends HttpServlet {
 			for (int cnt = 0; cnt < 6; cnt++) {
 				if (!rs.next())
 					break;
+				// 이 부분 주목, List의 ProgressInput 타입으로 row를 만듦. 계속해서 받아오기.(출력)
 				ProgressInput row = new ProgressInput();
 				
 				row.setNum(rs.getInt("num"));
