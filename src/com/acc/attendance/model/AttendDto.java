@@ -1,11 +1,22 @@
 package com.acc.attendance.model;
 
+import com.acc.attendance.util.StringUtil;
+
 public class AttendDto {
-	String id;
-	String status;
-	int count;
-	String extra;
+	private String id;
+	private String status;
+	private int count;
+	private String extra;
+	private int meetingHeldAfterJoin;
 	
+	public int getMeetingHeldAfterJoin() {
+		return meetingHeldAfterJoin;
+	}
+
+	public void setMeetingHeldAfterJoin(int meetingHeldAfterJoin) {
+		this.meetingHeldAfterJoin = meetingHeldAfterJoin;
+	}
+
 	public int getCount() {
 		return count;
 	}
@@ -22,11 +33,12 @@ public class AttendDto {
 		this.extra = extra;
 	}
 
-	AttendDto(String id, String status, int count, String extra){
+	AttendDto(String id, String status, int count, String extra, int meetingHeldAfterJoin){
 		this.id = id;
 		this.status = status;
 		this.count = count;
 		this.extra = extra;
+		this.meetingHeldAfterJoin = meetingHeldAfterJoin;
 	}
 
 	public String getId() {
@@ -46,7 +58,12 @@ public class AttendDto {
 	}
 	
 	public String toString() {
-		return "id: " + id + ", status: " + status +", count: "+count+", extra: "+extra;
+		return "id: " + id + ", status: " + status +", count: "+count+", extra: "+extra+", meetingHeldAfterJoin: "+meetingHeldAfterJoin;
+	}
+	
+	public boolean isInvalid() {
+		return StringUtil.isEmpty(id)
+				|| StringUtil.isEmpty(status);
 	}
 	
 }
