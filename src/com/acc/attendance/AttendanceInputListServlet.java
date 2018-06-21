@@ -34,6 +34,9 @@ public class AttendanceInputListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		
+		
+		
 		doPost(request, response);
 	}
 
