@@ -10,12 +10,13 @@
 <!-- button style -->
 <link rel="stylesheet" href="/acc-attendance/assets/css/buttons.css">
 
+
 <link href="https://fonts.googleapis.com/css?family=Hi+Melody|Luckiest+Guy" rel="stylesheet">
 
 <style>
 
 #font1{
-	font-family: 'Luckiest Guy', cursive;
+	font-family: 'Times new Roman', bold;
 	color: #FF9900;
 }
 
@@ -31,7 +32,7 @@
 	height:520px;
 	padding: 2rem 1rem;
 	margin-bottom: 2rem;
-	background-image: url('science-fiction.jpg');
+	background-image: url('computer.jpg');
 	border-radius: .3rem;
 	background-size: cover;
 	
@@ -101,7 +102,7 @@
 	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 	transform: translatey(0px);
 	animation: float 6s ease-in-out infinite;
-	background-image: url('super-mario.jpg');
+	background-image: url('idea.jpg');
 	background-position: center;
 	background-size: cover;
 	
@@ -123,16 +124,17 @@
 			<div class="center jumbovidtext" style="margin-top:3rem">
 			<h1 class="display-3" id="font1">Arivo Coding Club(ACC)</h1>
 			
-			<div class="font2">
-			안녕하세요, 여러분! 아리보 코딩 클럽에 방문한 여러분을 진심을 환영합니다. 
+			<div class="font2">　　　　　　　　　　　　　　
+		아리보 코딩 클럽에 방문한 여러분을 진심을 환영합니다. 
 			아리보 코딩 클럽은 JAVA를 공부하는 모임입니다.
 			</div>
-			
+			<br>
+			<!-- 
 			<p>
-				<a class="zoom button button-3d button-action button-pill" href="intro.html" role="button">더
-					알고싶어요 &raquo;</a>
+				<a class="zoom button button-3d button-action button-pill" href="intro.html" role="button">
+				　　　　　　　　　　　　　　　　　　　　　　　　　　　　더 알고싶어요 &raquo;</a>
 			</p>
-			
+			-->
 			<div class="avatar">
 				<a href="intro.jsp">&nbsp;</a>
 			</div>
@@ -149,7 +151,7 @@
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-4 short-links">
-				<a class="zoom button button-3d button-action button-pill" href="progress.html"
+				<a class="zoom button button-3d button-action button-pill" href="Progress-list"
 						role="button">진도표 보러가기&raquo;</a>			
 			</div>
 			<div class="col-md-4 short-links">

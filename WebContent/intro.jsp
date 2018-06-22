@@ -31,7 +31,8 @@
         <p style="clear:both;">
 	        <h2>스터디 주제</h2>
 	        -JAVA<br>
-	        -OCJP<br><br>
+	        -OCJP<br>
+	        -Algorithm<br><br>
 	
 	        <h2>오시는길</h2>
 	        -4호선 사당역 10번 출구, `카페 아리보`
