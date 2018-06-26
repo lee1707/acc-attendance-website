@@ -8,8 +8,8 @@
 <%@include file="Header.jsp"%>
 
     <!-- Begin page content -->
-    <main role="main" class="container">
-      <h1 class="mt-5">${boardItem.title}</h1>
+    <main role="main" class="container">제목:
+      <h1 class="mt-5"><input type="text" name="title" ></h1>
       <p class="lead">
         <body>
           <div class="table-responsive">
