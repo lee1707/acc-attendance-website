@@ -23,22 +23,36 @@ import com.mysql.jdbc.PreparedStatement;
 public class BoardInputServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private String title;
-	private String content;
 	private String writer;
 	private String wdate;
 	private String wtime;
-	
+	private int num;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		response.setContentType("text/plain;charset=UTF-8");
+		
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
 
+		Connection conn = null;
+		Statement stmt = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/webdb?useUnicode=true&characterEncoding=utf8", "root", "1234");
+			if (conn == null)
+				throw new Exception("데이터베이스에 연결할 수 없습니다");
+			
+			StringBuffer sql = new StringBuffer();
+			sql.append("SELECT BOARD_NUM);
 		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/plain;charset=UTF-8");
-		
+
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 

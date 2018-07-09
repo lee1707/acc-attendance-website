@@ -169,8 +169,13 @@ $(document).ready(function() {
 		id: this.value,
 		//status checked를 보냄
 		status: $('[name=' + this.value + ']:checked').val(), 
+		//count에 값을 넣어서 던져야함
 		count: 0,
-		extra: null
+		
+		//extra에 값을 넣어서 던져야함
+		extra: null,
+		//meetingHeldAfterJoin 값을 넣어서 던짐, Calendar에 있는 Date계산 값에서 day값만 빼오기
+		
 		}
 
 		//push는 list의 add같은것. array에 status를 담음

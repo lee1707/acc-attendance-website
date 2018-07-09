@@ -68,6 +68,7 @@ public class AttendanceInputListServlet extends HttpServlet {
 			} else {
 				attendance = dto.getCount();
 			}
+			//이 값을 받아오는데 count와 같이 증가되었음+ 증가가 안되는 오류**
 			meetingHeldAfterJoin = dto.getMeetingHeldAfterJoin() + 1;
 			extra = dto.getExtra();
 			num = dto.getId();
