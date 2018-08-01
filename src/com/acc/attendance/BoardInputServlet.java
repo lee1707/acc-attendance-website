@@ -45,7 +45,7 @@ public class BoardInputServlet extends HttpServlet {
 				throw new Exception("데이터베이스에 연결할 수 없습니다");
 			
 			StringBuffer sql = new StringBuffer();
-			sql.append("SELECT BOARD_NUM);
+			sql.append("SELECT BOARD_NUM");
 		doPost(request, response);
 	}
 
