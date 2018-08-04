@@ -134,6 +134,8 @@
 	<div class="col-lg-12 text-center">
 		<a href="Attendance-InputList" class="btn btn-info" id="btnCheck">완료</a>
 			 <a href="attendanceInput.jsp"
+			class="btn btn-info" onclick="document.getElementById('1').reset()">수정</a>
+			 <a href="attendanceInput.jsp"
 			class="btn btn-light" onclick="document.getElementById('1').reset()">리셋</a>
 	</div>
 </div>
